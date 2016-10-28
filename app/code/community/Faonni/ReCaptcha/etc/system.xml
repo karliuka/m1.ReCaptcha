@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_ReCaptcha
+ * @copyright   Copyright (c) 2015 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <sections>
+        <customer>
+            <groups>
+                <recaptcha translate="label">
+                    <label>ReCAPTCHA</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>111</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable CAPTCHA on Frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <site_key translate="label">
+                            <label>Site Key</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enable>1</enable></depends>
+							<frontend_class>required-entry</frontend_class>
+                        </site_key>
+                        <secret_key translate="label">
+                            <label>Secret Key</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enable>1</enable></depends>
+							<frontend_class>required-entry</frontend_class>
+                        </secret_key>							
+                        <forms translate="label">
+                            <label>Forms</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>faonni_recaptcha/adminhtml_system_config_source_form</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enable>1</enable></depends>
+                        </forms>
+                        <type translate="label">
+                            <label>Type of CAPTCHA</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>faonni_recaptcha/adminhtml_system_config_source_type</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enable>1</enable></depends>
+                        </type>							
+                        <size translate="label">
+                            <label>Size of CAPTCHA</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>faonni_recaptcha/adminhtml_system_config_source_size</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enable>1</enable></depends>
+                        </size>	
+                        <theme translate="label">
+                            <label>Color theme of CAPTCHA</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>faonni_recaptcha/adminhtml_system_config_source_theme</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enable>1</enable></depends>
+                        </theme>	
+                    </fields>
+                </recaptcha>
+            </groups>
+        </customer>
+    </sections>
+</config>

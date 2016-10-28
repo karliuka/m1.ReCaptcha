@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_ReCaptcha
+ * @copyright   Copyright (c) 2015 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout version="0.1.0">
+	<!--
+	Faonni ReCaptcha Js Handle
+	-->
+    <faonni_recaptcha_handle>
+		<reference name="head">
+			<block type="faonni_recaptcha/head" name="google.recaptcha"/>	
+		</reference>
+    </faonni_recaptcha_handle>
+	<!--
+	Customer account login
+	-->
+    <customer_account_login>
+        <update handle="faonni_recaptcha_handle"/>
+		<reference name="customer_form_login">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="faonni_recaptcha/form" name="google.recaptcha" template="faonni/recaptcha/form.phtml"/>
+            </block>
+        </reference>
+    </customer_account_login>
+	<!--
+	Customer account forgotpassword
+	-->	
+    <customer_account_forgotpassword>
+        <update handle="faonni_recaptcha_handle"/>
+		<reference name="forgotPassword">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="faonni_recaptcha/form" name="google.recaptcha" template="faonni/recaptcha/form.phtml"/>
+            </block>
+        </reference>	
+    </customer_account_forgotpassword>
+	<!--
+	Customer account create
+	-->	
+    <customer_account_create>
+        <update handle="faonni_recaptcha_handle"/>
+		<reference name="customer_form_register">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="faonni_recaptcha/form" name="google.recaptcha" template="faonni/recaptcha/form.phtml"/>
+            </block>
+        </reference>	
+    </customer_account_create>
+	<!--
+	Customer account confirmation
+	-->		
+    <customer_account_confirmation>
+        <update handle="faonni_recaptcha_handle"/>
+		<reference name="accountConfirmation">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="faonni_recaptcha/form" name="google.recaptcha" template="faonni/recaptcha/form.phtml"/>
+            </block>
+        </reference>
+    </customer_account_confirmation>	
+	<!--
+	Contact form
+	-->		
+	<contacts_index_index>
+		<update handle="faonni_recaptcha_handle"/>
+		<reference name="contactForm">
+			<action method="setTemplate"><template>faonni/recaptcha/contacts/form.phtml</template></action>
+            <block type="core/text_list" name="form.additional.info">
+                <block type="faonni_recaptcha/form" name="google.recaptcha" template="faonni/recaptcha/form.phtml"/>
+            </block>
+		</reference>
+	</contacts_index_index>	
+	<!--
+	Checkout onepage index
+	-->		
+    <checkout_onepage_index>
+        <update handle="faonni_recaptcha_handle"/>
+		<reference name="checkout.onepage.login">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="faonni_recaptcha/form" name="google.recaptcha.login" template="faonni/recaptcha/form.phtml"/>
+            </block>
+        </reference>
+		<reference name="checkout.onepage.billing">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="faonni_recaptcha/form" name="google.recaptcha.guest.checkout" template="faonni/recaptcha/form.phtml"/>
+            </block>
+        </reference>
+    </checkout_onepage_index>
+	<!--
+	End updates
+	-->	
+</layout>

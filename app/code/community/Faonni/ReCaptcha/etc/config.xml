@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_ReCaptcha
+ * @copyright   Copyright (c) 2015 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Faonni_ReCaptcha>
+			<version>1.1.0</version>
+		</Faonni_ReCaptcha>
+	</modules>
+	<global>
+        <blocks>
+            <faonni_recaptcha>
+				<class>Faonni_ReCaptcha_Block</class>
+			</faonni_recaptcha>
+        </blocks>	
+		<helpers>
+			<faonni_recaptcha>
+				<class>Faonni_ReCaptcha_Helper</class>
+			</faonni_recaptcha>		
+		</helpers>
+		<models>
+            <faonni_recaptcha>
+                <class>Faonni_ReCaptcha_Model</class>
+            </faonni_recaptcha>
+		</models>
+        <recaptcha>
+            <action>
+				<customer_account_login>
+					<label>Customer Login</label>
+					<post>customer_account_loginpost</post>
+				</customer_account_login>
+				<customer_account_create>
+					<label>New Customers</label>
+					<post>customer_account_createpost</post>
+				</customer_account_create>		
+				<customer_account_forgotpassword>
+					<label>Forgot Password</label>
+					<post>customer_account_forgotpasswordpost</post>
+				</customer_account_forgotpassword>
+				<customer_account_confirmation>
+					<label>Confirmation key</label>
+					<post>customer_account_confirmation</post>
+				</customer_account_confirmation>				
+				<contacts_index_index>
+					<label>Contact Form</label>
+					<post>contacts_index_post</post>
+				</contacts_index_index>
+				<checkout_onepage_index>
+					<label>Checkout</label>
+					<post>checkout_onepage_savebilling</post>
+				</checkout_onepage_index>	
+            </action>
+        </recaptcha>		
+	</global>
+    <frontend>
+        <layout>
+            <updates>
+                <faonni_recaptcha>
+                    <file>faonni/recaptcha.xml</file>
+                </faonni_recaptcha>
+            </updates>
+        </layout>
+		<translate>
+            <modules>
+                <faonni_recaptcha>
+                    <files>
+                        <default>Faonni_ReCaptcha.csv</default>
+                    </files>
+                </faonni_recaptcha>
+            </modules>
+        </translate>		
+		<events>
+            <controller_action_predispatch>
+				<observers>
+					<faonni_recaptcha>
+						<class>faonni_recaptcha/observer</class>
+						<method>predispatch</method>
+					</faonni_recaptcha>					
+				</observers>
+            </controller_action_predispatch>				
+        </events>	
+    </frontend>
+    <default>
+        <customer>
+            <recaptcha>
+                <enable>0</enable>
+				<site_key/>
+                <secret_key/>				
+                <forms>customer_account_create,customer_account_forgotpassword,contacts_index_index</forms>
+                <type>image</type>
+                <size>normal</size>
+                <theme>light</theme>
+            </recaptcha>
+        </customer>
+    </default>	
+</config> 
