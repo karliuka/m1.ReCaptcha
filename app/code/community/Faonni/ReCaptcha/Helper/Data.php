@@ -70,7 +70,7 @@ class Faonni_ReCaptcha_Helper_Data
     }
 	
     /**
-     * Retrieve full bane of current action current controller and
+     * Retrieve full name of current action current controller and
      * current module
      *
      * @return  string
